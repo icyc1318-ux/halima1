@@ -1,0 +1,168 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HBD Halima 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #ffe5f0, #fff7fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease;
+}
+
+h1 {
+    color: #e47da6;
+    font-size: clamp(55px, 12vw, 90px);
+    margin: 0 0 10px;
+    text-shadow: 0 5px 20px #f8c7dc;
+}
+
+.subtitle {
+    color: #d66e9b;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #ffe0ec;
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 35px rgba(220, 120, 160, 0.16);
+}
+
+.message {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.hearts {
+    font-size: 28px;
+    margin-top: 22px;
+}
+
+.confetti {
+    position: fixed;
+    top: -25px;
+    z-index: 1;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(900deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 23px 18px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>HBD 💗</h1>
+    <div class="subtitle">Happy Birthday, Halima! 🎂</div>
+
+    <div class="card">
+        <div class="message">
+            Idk what to say but your accutally the best most trustworthy kind person ive ever met and will ever meet
+            <br><br>
+            i dont want to make this long but i hope u see this and i wish u a happy bday..67
+        </div>
+
+        <div class="hearts">🤍 🌸 💗 🦋</div>
+    </div>
+</div>
+
+<script>
+const colors = [
+    "#ff8fba",
+    "#ffc4dc",
+    "#f5a3c5",
+    "#ffffff",
+    "#e879a6",
+    "#ffe0ec"
+];
+
+function createConfetti() {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+    piece.style.width = (Math.random() * 8 + 5) + "px";
+    piece.style.height = (Math.random() * 12 + 8) + "px";
+    piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+    piece.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(() => piece.remove(), 6500);
+}
+
+// Start the confetti immediately
+for (let i = 0; i < 140; i++) {
+    setTimeout(createConfetti, Math.random() * 3000);
+}
+
+// Keep the confetti raining
+setInterval(() => {
+    for (let i = 0; i < 12; i++) {
+        createConfetti();
+    }
+}, 350);
+</script>
+
+</body>
+</html>
+```
